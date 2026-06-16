@@ -69,20 +69,20 @@ def edit_lvd(pwr_name, ip):
             checkbox_selector = 'input[name="checkbox_1012_2040_0001"]'
             if page.is_visible(checkbox_selector, timeout=2000):
                 print(f"[+] Checkbox LVD tồn tại trên {pwr_name} ({ip}), tiến hành chỉnh sửa...")
-                page.check(checkbox_selector)
-                page.click('input[name="accept"]')
+                # page.check(checkbox_selector)
+                # page.click('input[name="accept"]')
 
-                # Reload lại trang để kiểm tra thay đổi
-                page.reload(timeout=TIMEOUT)
-                page.wait_for_load_state("domcontentloaded", timeout=TIMEOUT)
+                # # Reload lại trang để kiểm tra thay đổi
+                # page.reload(timeout=TIMEOUT)
+                # page.wait_for_load_state("domcontentloaded", timeout=TIMEOUT)
 
-                # Kiểm tra lại checkbox đã được tick chưa
-                if page.is_checked(checkbox_selector):
-                    print(f"[] Chỉnh LVD thành công trên {pwr_name} ({ip})!")
-                    return [pwr_name, ip, "OK", ""]
-                else:
-                    print(f"[] Chỉnh LVD thất bại trên {pwr_name} ({ip}).")
-                    return [pwr_name, ip, "FAILED", "Checkbox not applied"]
+                # # Kiểm tra lại checkbox đã được tick chưa
+                # if page.is_checked(checkbox_selector):
+                #     print(f"[] Chỉnh LVD thành công trên {pwr_name} ({ip})!")
+                #     return [pwr_name, ip, "OK", ""]
+                # else:
+                #     print(f"[] Chỉnh LVD thất bại trên {pwr_name} ({ip}).")
+                #     return [pwr_name, ip, "FAILED", "Checkbox not applied"]
             else:
                 print(f"[] Không tìm thấy checkbox LVD trên {pwr_name} ({ip}).")
                 return [pwr_name, ip, "FAILED", "Checkbox not found"]
