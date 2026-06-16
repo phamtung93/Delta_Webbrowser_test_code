@@ -79,7 +79,7 @@ def edit_lvd(pwr_name, ip):
                 # # Kiểm tra lại checkbox đã được tick chưa
                 # if page.is_checked(checkbox_selector):
                 #     print(f"[] Chỉnh LVD thành công trên {pwr_name} ({ip})!")
-                #     return [pwr_name, ip, "OK", ""]
+                return [pwr_name, ip, "OK", ""]
                 # else:
                 #     print(f"[] Chỉnh LVD thất bại trên {pwr_name} ({ip}).")
                 #     return [pwr_name, ip, "FAILED", "Checkbox not applied"]
